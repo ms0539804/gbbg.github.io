@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+<script type="text/javascript">
+    var host = "gbbg2019.com";
+    if (host == window.location.host)
+        window.location.host = "www.brohey.com";
+</script>
+
+<!--
+<script>
+    // redirect to new site
+    var gitlab = new URL(window.location);
+    gitlab.hostname = "brohey.com";
+    gitlab.protocol = "https";
+    window.location.href = gitlab.toString();
+</script>
+-->
+  <meta charset="utf-8">
+  
+  <title>技術分析入門一：單根K線的解讀 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="k線圖實戰分析,技術分析入門,技術分析網站,k線組合,陸股投資" />
+  
+  
+  
+  
+  <meta name="description" content="舉凡把成交量與價格關係作為買入賣出的訊號的分析，都可以是技術分析的範疇。百年以來為了更好的探索量價關係，發展出許多獨特的分析科技，而這些科技為何被市場廣泛的應用？根基為何？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="技術分析入門一：單根K線的解讀">
+<meta property="og:url" content="http://gbbg2019.com/2019/10/07/single-k-analysis/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="舉凡把成交量與價格關係作為買入賣出的訊號的分析，都可以是技術分析的範疇。百年以來為了更好的探索量價關係，發展出許多獨特的分析科技，而這些科技為何被市場廣泛的應用？根基為何？">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://gbbg2019.com/pics/26单K线.jpg">
+<meta property="article:published_time" content="2019-10-07T03:33:53.000Z">
+<meta property="article:modified_time" content="2021-12-30T12:33:23.088Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="技術分析，K線圖，單根K線">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://gbbg2019.com/pics/26单K线.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/fashion.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="Hexo" rel="home"> Hexo </a>
+            
+          </h1>
+          
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="/"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="archives"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="categories"> <a class="" href="/categories">Categories</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="tags"> <a class="" href="/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="about"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-single-k-analysis" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+<div class="article-gallery">
+  <div class="article-gallery-photos">
+    
+      <a class="article-gallery-img fancybox" href="/pics/26%E5%8D%95K%E7%BA%BF.jpg" rel="gallery_cl3n4tiei00a1ngupea1e0dg4">
+        <img src="/pics/26%E5%8D%95K%E7%BA%BF.jpg" itemprop="image">
+      </a>
+    
+  </div>
+</div>
+
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      技術分析入門一：單根K線的解讀
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2019/10/07/single-k-analysis/" class="article-date">
+	  <time datetime="2019-10-07T03:33:53.000Z" itemprop="datePublished">October 7, 2019</time>
+	</a>
+
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/2-%E6%8A%95%E8%B3%87%E5%85%A5%E9%96%80/">2.投資入門</a>, <a class="article-category-link" href="/categories/2-%E6%8A%95%E8%B3%87%E5%85%A5%E9%96%80/2-2%E6%8A%80%E8%A1%93%E5%88%86%E6%9E%90/">2.2技術分析</a>
+ 
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><strong>文章目錄</strong></p>
+<p>　<a href="#a"><strong>1.學習技術分析前必須要瞭解</strong></a></p>
+<p>　<a href="#b"><strong>2.技術分析入門—K線圖的判讀</strong></a></p>
+</blockquote>
+<h1 id="01學習技術分析前必須要瞭解"><a href="#01學習技術分析前必須要瞭解" class="headerlink" title="01學習技術分析前必須要瞭解"></a><span id ="a">01學習技術分析前必須要瞭解</span></h1><p>　　技術分析涵蓋的範圍較為廣泛，</p>
+<p>舉凡把成交量與價格關係作為買入賣出的訊號的分析，都可以是技術分析的範疇。</p>
+<p>百年以來為了更好的探索量價關係，發展出許多獨特的分析科技，</p>
+<p>而這些科技為何被市場廣泛的應用？根基為何？</p>
+<p>技術分析完全建立在<strong>過去的歷史會重演</strong>的基礎上，</p>
+<span id="more"></span>
+
+<p>根據過去統計在某些量價關係發生時，後續<strong>大機率</strong>價格會往何處發展，</p>
+<p>所以請記住：</p>
+<p>使用技術分析時萬不可執著於技術分析，</p>
+<p>因為技術分析的預測是<strong>機率</strong>，也就是<strong>可能發生，也可能不發生</strong>。</p>
+<p>我們只能透過嚴格的停損停利來控制風險，免於失控。</p>
+<hr>
+<h1 id="02技術分析入門—K線圖的判讀"><a href="#02技術分析入門—K線圖的判讀" class="headerlink" title="02技術分析入門—K線圖的判讀"></a><span id ="b">02技術分析入門—K線圖的判讀</span></h1><p>　　既然瞭解了技術分析的前提條件，入門的分析技巧從讀懂K線圖開始。</p>
+<p>K線圖最早起源於日本商人記錄米價格波動，</p>
+<p>而後被沿用入股票市場，現在已經被廣泛的應用在各市場記錄價格變化。</p>
+<p><img src="/pics/%E5%8D%95K%E7%BA%BF.jpg" alt="K線圖"></p>
+<p>K線圖由四個價格組成，開盤價、收盤價、最高價與最低價，</p>
+<p>開盤價與收盤價間的價格變化用實體線表示，</p>
+<p>表示該期間真實有效的漲跌幅，到最高價或最低價的價格浮動用直線表示。</p>
+<p>單根K線漲跌簡單分為三種：</p>
+<p>1.收盤價 &gt; 開盤價，稱為陽線，表示該期間走的是上漲行情；</p>
+<p>2.收盤價 &#x3D; 開盤價，表示價格不漲不跌，</p>
+<p>可能表示行情正醞釀往某一方向發展，或者市場不活躍或股票停牌；</p>
+<p>3.收盤價 &lt; 開盤價，稱為陰線，表示該期間走的下跌行情。</p>
+<p><img src="/pics/%E7%BA%A2K%E5%BC%BA%E5%BC%B1%E5%85%B3%E7%B3%BB.jpg" alt="紅K强弱關係"></p>
+<p>我們可以從K線圖中看出該期間的買賣力量變化，<strong>但並非絕對</strong>，</p>
+<p>因為當K線走出時，表示價格波動已經成為歷史，</p>
+<p>只能站在過來人的角度回望過去，除了統計上的意義之外不可過度解讀。</p>
+<p>在眾多K線中最能够表示該期間買賣强弱關係的，</p>
+<p>莫過於長紅K與長黑K，這種開盤價與最低價重合，收盤為最高價（長紅），</p>
+<p>開盤價與最高價重合，收盤為最低價（長黑），表示市場上急於吃進籌碼，</p>
+<p>或是拋售籌碼，此類K線出現搭配成交量放大，可以表示該期間是極為強勢或者弱勢。</p>
+<p>當然也可能為市場莊家誘騙的手法，</p>
+<p>因此在不管在高低位出現長紅K或長黑K，如果行情沒有如預期發展就必須快速撤退。</p>
+<p>再來我們依據强弱順序來排序單根K線：</p>
+<p><img src="/pics/%E9%BB%91K%E5%BC%BA%E5%BC%B1%E5%85%B3%E7%B3%BB.jpg" alt="黑K强弱關係"></p>
+<p>如此就可以先基本的瞭解單根K線所代表的意義，基本上<strong>無法代表任何意義</strong>，</p>
+<p>只能說是對於過去歷史價格的走勢的記錄，過分的解讀並無法提升股市中的操作績效。</p>
+<p><strong>建議閱讀：<a href="/correct-technical-analyst/">持續的獲利只關乎兩件事。技術分析正確的使用準則。</a></strong></p>
+<blockquote>
+<p><strong>最後簡單總結</strong></p>
+<p>1.K線的使用必須搭配嚴格的停損停利來控制風險。</p>
+<p>2.單根K線只能表示對於過去歷史的記錄，不能過度解讀。</p>
+</blockquote>
+<p><strong>完整K線教學下載：<a href="/download/%E5%8D%95%E6%A0%B9K%E7%BA%BF.pdf">點擊下載</a></strong></p>
+<p>下一篇：<a href="/mutiple-k-analysis/">技術分析入門二：多根K線的解讀</a></p>
+<p>關於技術分析可能想繼續學習，完整技術分析文章如下：</p>
+<p><strong>【股票技術分析的8門課】</strong></p>
+<p>1.技術分析入門一：單根K線的解讀（本篇）</p>
+<p>2.<a href="/mutiple-k-analysis/">技術分析入門二：多根K線的解讀</a></p>
+<p>3.<a href="/lean-patternology-analysis/">技術分析入門三：型態學</a></p>
+<p>4.<a href="/dow-theory-introduction/">技術分析入門四：道氏理論</a></p>
+<p>5.<a href="/wave-pinciple-introduction/">技術分析入門五：市場玄學波浪理論</a>  </p>
+<p>6.<a href="/how-draw-trendline/">如何正確的畫出趨勢線？利用線圖識別趨勢的反轉</a></p>
+<p>7.<a href="/technical-analysis-index/">MACD, KDJ, BOOL, MA技術分析指標大全，主流指標一次搞明白</a></p>
+<p>8.<a href="/correct-technical-analyst/">持續的獲利只關乎兩件事。技術分析正確的使用準則</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.facebook.com/hey.gbbg"><img src="/pics/FB.jpg"></a></p>
+<p><a target="_blank" rel="noopener" href="https://www.instagram.com/hey.gbbg/"><img src="/pics/IG.jpg"></a></p>
+<br>
+
+<p><font size=4> <strong>|  其他投資者也讀了…</strong></font> </p>
+<p><a href="/etf-book-recommend/"><img src="/pics/firstradesmall.jpg"></a></p>
+<p><a href="/credit-card-recommend/"><img src="/pics/creditcard.jpg"></a></p>
+<p><a href="/etf-book-recommend/"><img src="/pics/ETFbook.jpg"></a></p>
+<p><a href="/StockInvestment/"><img src="/pics/%E6%8A%95%E8%B3%87%E5%85%A5%E9%96%80.jpg"></a></p>
+<p><a href="/online-course-recommend/"><img src="/pics/%E8%AA%B2%E7%A8%8B%E6%8E%A8%E8%96%A6.jpg"></a></p>
+<br>
+
+<p><font size=4> <strong>| 你可能喜歡…</strong></font> </p>
+<p><a href="/invest-china-etf/"><img src="/pics/%E9%99%B8%E8%82%A1%E6%8A%95%E8%B3%87.jpg"></a></p>
+<p><a href="/china-stock-valuation/"><img src="/pics/%E8%A8%98%E5%B8%B3.jpg"></a></p>
+<p><a href="/real-estate-downpayment/"><img src="/pics/%E8%87%AA%E5%82%99%E6%AC%BE.jpg"></a></p>
+<p><a href="/real-estate-defect/"><img src="/pics/%E7%91%95%E7%96%B5%E6%88%BF.jpg"></a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="/pics/表哥.png" width="120" height="120"  style="margin: 0 auto;"/></td>
+<td align="center"><font size=5 >筆者：**<a href="/about/">隔壁表哥</a>** </font><br/><br/><font size=3>台灣大學畢業。曾任基金業。<font> <br/><font  size=3>利用閒暇時間分享金融知識。<font> <br/><font  size=3>讓投資成為生活的一部分吧！<font></td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/2-%E6%8A%95%E8%B3%87%E5%85%A5%E9%96%80/">2.投資入門</a>, <a class="article-category-link" href="/categories/2-%E6%8A%95%E8%B3%87%E5%85%A5%E9%96%80/2-2%E6%8A%80%E8%A1%93%E5%88%86%E6%9E%90/">2.2技術分析</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E8%A1%93%E5%88%86%E6%9E%90%EF%BC%8CK%E7%B7%9A%E5%9C%96%EF%BC%8C%E5%96%AE%E6%A0%B9K%E7%B7%9A/" rel="tag">技術分析，K線圖，單根K線</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/10/11/mutiple-k-analysis/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          技術分析入門二：多根K線的解讀
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/30/zero-bitcoin-investment/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">瘋狂的投機商品—比特幣，從零開始認識比特幣</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#01%E5%AD%B8%E7%BF%92%E6%8A%80%E8%A1%93%E5%88%86%E6%9E%90%E5%89%8D%E5%BF%85%E9%A0%88%E8%A6%81%E7%9E%AD%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">01學習技術分析前必須要瞭解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#02%E6%8A%80%E8%A1%93%E5%88%86%E6%9E%90%E5%85%A5%E9%96%80%E2%80%94K%E7%B7%9A%E5%9C%96%E7%9A%84%E5%88%A4%E8%AE%80"><span class="nav-number">2.</span> <span class="nav-text">02技術分析入門—K線圖的判讀</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2022 Hexo All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+<script src="/js/bootstrap.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

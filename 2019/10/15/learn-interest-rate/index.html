@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+<script type="text/javascript">
+    var host = "gbbg2019.com";
+    if (host == window.location.host)
+        window.location.host = "www.brohey.com";
+</script>
+
+<!--
+<script>
+    // redirect to new site
+    var gitlab = new URL(window.location);
+    gitlab.hostname = "brohey.com";
+    gitlab.protocol = "https";
+    window.location.href = gitlab.toString();
+</script>
+-->
+  <meta charset="utf-8">
+  
+  <title>升息、降息，提高與降低準備金率一次弄懂 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="升息,降息,降准,貨幣,貨幣政策,中央銀行" />
+  
+  
+  
+  
+  <meta name="description" content="在經濟循環的週期中，升息、降息幾乎被視為最重大的經濟決策之一，全世界各個經濟體的升降息都被各國關注著，影響著各國之間的投資關係；與外匯市場的貨幣供求關係。今天來看看升息降息如何影響市場行為？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="升息、降息，提高與降低準備金率一次弄懂">
+<meta property="og:url" content="http://gbbg2019.com/2019/10/15/learn-interest-rate/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="在經濟循環的週期中，升息、降息幾乎被視為最重大的經濟決策之一，全世界各個經濟體的升降息都被各國關注著，影響著各國之間的投資關係；與外匯市場的貨幣供求關係。今天來看看升息降息如何影響市場行為？">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://gbbg2019.com/pics/29调节经济的阀门.jpg">
+<meta property="article:published_time" content="2019-10-15T05:15:53.000Z">
+<meta property="article:modified_time" content="2021-12-30T12:33:23.076Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="經濟週期">
+<meta property="article:tag" content="升息">
+<meta property="article:tag" content="降息">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://gbbg2019.com/pics/29调节经济的阀门.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/fashion.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="Hexo" rel="home"> Hexo </a>
+            
+          </h1>
+          
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="/"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="archives"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="categories"> <a class="" href="/categories">Categories</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="tags"> <a class="" href="/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="about"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-learn-interest-rate" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+<div class="article-gallery">
+  <div class="article-gallery-photos">
+    
+      <a class="article-gallery-img fancybox" href="/pics/29%E8%B0%83%E8%8A%82%E7%BB%8F%E6%B5%8E%E7%9A%84%E9%98%80%E9%97%A8.jpg" rel="gallery_cl3n4tidk008gngup7thlhah0">
+        <img src="/pics/29%E8%B0%83%E8%8A%82%E7%BB%8F%E6%B5%8E%E7%9A%84%E9%98%80%E9%97%A8.jpg" itemprop="image">
+      </a>
+    
+  </div>
+</div>
+
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      升息、降息，提高與降低準備金率一次弄懂
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2019/10/15/learn-interest-rate/" class="article-date">
+	  <time datetime="2019-10-15T05:15:53.000Z" itemprop="datePublished">October 15, 2019</time>
+	</a>
+
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/1-%E7%90%86%E8%B2%A1%E5%85%A5%E9%96%80/">1.理財入門</a>, <a class="article-category-link" href="/categories/1-%E7%90%86%E8%B2%A1%E5%85%A5%E9%96%80/1-4%E9%80%B2%E9%9A%8E%E9%87%91%E8%9E%8D/">1.4進階金融</a>
+ 
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><strong>文章目錄</strong></p>
+<p>　<a href="#a"><strong>1.什麼是升息、降息？如何在經濟體上運作？</strong></a></p>
+<p>　<a href="#b"><strong>2.升降准如何影響經濟體運作？</strong></a></p>
+</blockquote>
+<h1 id="01-什麼是升息、降息？如何在經濟體上運作？"><a href="#01-什麼是升息、降息？如何在經濟體上運作？" class="headerlink" title="01.什麼是升息、降息？如何在經濟體上運作？"></a><span id ="a">01.什麼是升息、降息？如何在經濟體上運作？</span></h1><p>　　在經濟循環的週期中， </p>
+<p>升息、降息幾乎被視為最重大的經濟決策之一， </p>
+<p>全世界各個經濟體的升降息都被各國關注著， </p>
+<p>影響著各國之間的投資關係； 與外匯市場的貨幣供求關係。</p>
+<p>今天來看看升息降息如何影響市場行為？ </p>
+<p>首先來升降息是升高與降低什麼？ <strong>利息率</strong>：商業銀行向中央銀行借貸的利率。 </p>
+<p>藉由提高商業銀行向中央銀行的貸款利率，導致貨幣從中央銀行流出的成本上升，</p>
+<p>從而使得在下游的商業銀行放貸、儲蓄、同業拆借利息上升，企業貸款利息也隨之上升。</p>
+<span id="more"></span>
+
+<p><img src="/pics/%E9%99%8D%E6%81%AF%E5%9B%BE.jpg" alt="降息示意圖"></p>
+<p>　　前文中提到利息就是借貸成本，</p>
+<p>利息越低，借貸的成本越低， 使得貸款的需求上升，</p>
+<p>許多原先財務不可行的投資項目得以開展， </p>
+<p>此外銀行利用儲蓄的錢拿去放貸所收到的利息拿來支付人民儲蓄利息，</p>
+<p>但是由於貸款利率下降，使得貸出去的錢毛利率下滑， </p>
+<p>存款利率也隨之調降， 原先放在銀行領取利息的存款， </p>
+<p>開始在市場找尋更高回報的投資機會（恰好此時市場投資機會也增加）， </p>
+<p><strong>貨幣快速從銀行流出，</strong> <strong>或至實體經濟，或至股票債券市場，</strong> </p>
+<p><strong>甚至過剩的資金流入房地產，</strong> <strong>形成貨幣放水的過程。</strong> </p>
+<p>降息週期的啟動，通常在實體經濟增長停滯時， 或者經濟開始出現衰退， </p>
+<p>會藉由政策使得貨幣流入民間企業， 拯救實體經濟的衰退。 </p>
+<p>　　升息的政策則相反， </p>
+<p>升息為提高借款利息使得借款成本上升， </p>
+<p>原先財務可行的投資由於成本的上升無法進行， </p>
+<p>市場使用資金開始謹慎，貸款審核開始嚴苛， 銀行儲蓄的毛利開始增加， </p>
+<p>在市場投資機會減少的背景下， 銀行提高的存款利率吸引了更多儲蓄， </p>
+<p><strong>貨幣將從實體企業、股票市場或房地產市場流出</strong>， </p>
+<p>這種銀根緊縮的貨幣政策通常出現於經濟勢頭過猛， 泡沫形成太過迅速時， </p>
+<p>是經濟踩刹車的手段， 將使得貸款方更加謹慎的去評估貸款的可行性。 </p>
+<p>　　作為中央銀行控制貨幣流通的手段之一，</p>
+<p>升降息發佈通常在經濟週期的關鍵節點，</p>
+<p>發佈降息時，經濟可能正處於增速下滑，或是衰退過程，</p>
+<p>此時的貨幣放水後，必須經過一段時間才可以有效反應在實體企業，</p>
+<p>因為企業從貸款到產出需要一段時間才可以反應到業績上，</p>
+<p>同時在經濟衰退的過程中企業再投入的意願不強烈，</p>
+<p>市場投資機會減少有週期性，不會立即反應，</p>
+<p>因此實體經濟不可避免的將會經歷一段低增長或是衰退的局勢。</p>
+<p>升息過程也是如此，貨幣刹車後市場投資機會還是尚多，</p>
+<p>沿著慣性增長，市場還會繼續的向上發展一段時間，</p>
+<p>因此通常<strong>升息與降息開展後通常為一段週期</strong>，</p>
+<p>不容易出現這個月升息，下個月降息的情況。</p>
+<h1 id="02-升降准如何影響經濟體運作？"><a href="#02-升降准如何影響經濟體運作？" class="headerlink" title="02.升降准如何影響經濟體運作？"></a><span id ="b">02.升降准如何影響經濟體運作？</span></h1><p>　　另外一種常用來調節貨幣流量的工具為存款準備金， </p>
+<p>存款準備金是銀行預留的應急資金， 用來對付儲戶的提款， </p>
+<p>我們放在銀行的錢由於通常不會被大額提領， </p>
+<p>銀行會預留部分的錢提供儲戶提領， 剩餘部分拿去放貸或投資， </p>
+<p><img src="/pics/%E5%AD%98%E6%AC%BE%E5%87%86%E5%A4%87%E9%87%91.jpg" alt="存款準備金"></p>
+<p>應急部分提供擠兌的資金就是銀行被規定在中央銀行存放的存款準備金， </p>
+<p>是貨幣流通的安全墊， 通常是以比例來規定， </p>
+<p>也就是多少的資金必須對應多少比例的準備金， 這個比例就是存款準備金率， </p>
+<p>例如目前存款準備金規定在10%，則如果吸收存款1億元，必須在銀行有1千萬元的準備金，</p>
+<p>因此以1千萬元的準備金來看，銀行最多只能向外放出1億元的貸款，</p>
+<p>升降准就是提高或調低商業銀行存款準備金比率， </p>
+<p>用來控制商業銀行能夠用來借貸， 或是流通到市面上的貨幣， </p>
+<p>今天如果提高準備金的比例會有什麼影響，</p>
+<p>假設從10%提高到了20%，表示原先存款1億元從需要1千萬元的準備金，變成2千萬元，</p>
+<p>銀行能貸出的存款下降了10%，也就是1千萬元（2千萬-1千萬）；</p>
+<p>反過來如果準備金比率20%降低到10%，存款1億元從需要2千萬元的準備金，變成1千萬元，</p>
+<p>銀行能貸出的存款上升10%，1千萬元。</p>
+<p>央行可以利用調高降低存款準備金控制銀行流出貸款的總量。</p>
+<p>　　此外中央銀行在控制市場貨幣流通還有另一種方法，</p>
+<p>透過中央銀行買入或賣出政府證券（國債）操作， </p>
+<p>準備金率倒數就是其中的放大乘數， 例如準備金率為10%， </p>
+<p>中央銀行買入1億的國債，就可以在市面上增發價值10億的貨幣。 </p>
+<p><img src="/pics/%E5%A4%AE%E8%A1%8C%E8%B4%AD%E4%B9%B0%E5%9B%BD%E5%80%BA.jpg" alt="央行購買國債"></p>
+<p>具體操作中央銀行首先用自有資金（印鈔票）在市面上（各銀行）購買國債，</p>
+<p>計入存款準備金中，多出的存款準備金擴大了可以吸納存款量，</p>
+<p>根據存款準備金比率成為了市場上放貸的新增量。</p>
+<p>以上述圖為例，中央銀行向市面購買1百萬國債，放入準備金中，</p>
+<p>由於商業銀行多出了1百萬準備金，可以依據10%的準備金率吸納1千萬的存款，</p>
+<p>在市場上可新增貸款1千萬。也就是以10倍的規模向外放水，放水的幅度相當可觀。</p>
+<p>通常貨幣政策使用上為了達到不同效果會搭配著使用，</p>
+<p>市場上的企業也不全是處於同一個經濟週期當中，</p>
+<p>如何準確將資金投放到需求的實體企業處，是政府在執行貨幣政策上的困難之處。</p>
+<blockquote>
+<p><strong>最後簡單總結：</strong></p>
+<p>以上介紹了三種中央銀行施行的控制貨幣的流通辦法：升降息、升降准與債券回購。</p>
+</blockquote>
+<p><strong>投資小白入門系列可參考</strong></p>
+<p><strong><a href="/book/">投資理財入門書籍》隔壁表哥投資理財好書推薦</a></strong></p>
+<p><strong><a href="/StockInvestment/">股票投資入門》股票怎麼玩？股票入門基礎知識</a></strong></p>
+<p align="right"><font color="#8B8878" size =3 >總瀏覽次數： 8.8萬 次</font></p>
+<br>
+
+<p><font size=4> <strong>|  其他投資者也讀了…</strong></font> </p>
+<p><strong><font size=4>1.<a href="/before-investment-step/">投資前，先請進！3個步驟開啟投資生涯</a> <font></strong></p>
+<p><strong><font size=4>2.<a href="/whole-life-cost/">想退休？先賺夠”這“筆錢再說！人一輩子要花多少錢？</a> <font></strong></p>
+<p><strong><font size=4>3.<a href="/investment-loss-reason/">炒股了幾年，歸來仍然是韭菜。股民的心酸，炒股虧錢十有八九是因為…</a></strong></p>
+<p><strong><font size=4>4.<a href="/balance-sheet-introduction/">透視企業的放大鏡，從零認識財務報表——資產負債表</a><font></strong></p>
+<p><strong><font size=4>5.<a href="/zero-fund-investment/">基金是在騙錢嗎？從0開始學習投資基金</a><font></strong></p>
+<p><strong><font size=4>6.<a href="/correct-technical-analyst/">【限時免費】持續的獲利只關乎兩件事。技術分析正確的使用準則。</a><font></strong></p>
+<br>
+
+<style>
+table th:nth-of-type(1){
+width: 30%;
+}
+table th:nth-of-type(2){
+width: 70%;
+}
+</style>
+
+
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center"><strong><font size=5>　聰明人這樣理財</font></strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="/how-save-salary/"><img src="/pics/03%E5%AE%88%E4%BD%8F%E6%AF%8F%E4%B8%80%E5%88%86%E6%94%B6%E5%85%A5.jpg"></a></td>
+<td align="center"><u><strong><font size=4><a href="/how-save-salary/">《薪水存不下來？百分之90的人都少做了“這件事”》</a></font></strong></u></td>
+</tr>
+<tr>
+<td><a href="/saving-loss-inflation/"><img src="/pics/05%E8%BF%98%E5%9C%A8%E4%BB%A5%E4%B8%BA%E6%8B%BF%E5%9C%A8%E6%89%8B%E9%87%8C%E5%BE%97%E9%92%B1%E6%9C%80%E5%AE%89%E5%BF%83.jpg"></a></td>
+<td align="center"><strong><u><font size=4><a href="/saving-loss-inflation/">《別以為拿在手裏的錢最安心！口袋裏的錢正在縮水！》</a></font></u></strong></td>
+</tr>
+<tr>
+<td><a href="/want-vs-need/"><img src="/pics/07%E9%9C%80%E8%A6%81%E4%B8%8E%E6%83%B3%E8%A6%81.jpg"></a></td>
+<td align="center"><strong><u><font size=4><a href="/want-vs-need/">《月底了，又是月光族？不可不釐清的月光陷阱！需要與想要，很重要嗎？》</a></font></u></strong></td>
+</tr>
+<tr>
+<td><a href="/bubble-destroy-income/"><img src="/pics/04%E6%B3%A1%E6%B2%AB%E4%B8%8E%E5%AE%9E%E4%BD%93%E7%BB%8F%E6%B5%8E.jpg"></a></td>
+<td align="center"><u><strong><font size=4><a href="/bubble-destroy-income/">《泡沫與實體經濟，薪水到底追不追得上物價上漲？》</a></font></strong></u></td>
+</tr>
+<tr>
+<td><a href="/calculate-retirement-pension/"><img src="/pics/12%E8%BF%98%E5%9C%A8%E4%BB%A5%E4%B8%BA%E9%80%80%E4%BC%91%E9%9D%A0%E5%85%BB%E8%80%81%E9%87%91%E5%AE%89%E7%A8%B3%E5%BA%A6%E6%97%A5.jpg"></a></td>
+<td align="center"><font size=4 vertical-align=middle><strong><u><a href="/calculate-retirement-pension/">   《【养老金试算】还在以为退休靠养老金安稳度日？养老金算出来还敢退休吗？》</a></u></strong></font></td>
+</tr>
+<tr>
+<td><a href="/investment-beginner-advice/"><img src="/pics/06%E8%B0%81%E8%AF%B4%E6%8A%95%E8%B5%84%E9%9C%80%E8%A6%81%E5%85%88%E6%9C%89%E4%B8%80%E7%AC%94%E9%92%B1.jpg"></a></td>
+<td align="center"><u><strong><font size=4><a href="/investment-beginner-advice/">《小心！誰說投資需要先有一筆錢？給投資新手的3個建議》</a></font></strong></u></td>
+</tr>
+</tbody></table>
+<p><font color="#FF0000" size =4 ><center> <strong>喜歡隔壁表哥文章分享給您的家人朋友。</strong></center></font></p>
+<p><strong><font size = 4><center>您的轉發與支持是隔壁表哥的寫作動力。</center></strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="/pics/avatar.png" width="120" height="120"  style="margin: 0 auto;"/></td>
+<td align="center"><font size=5 >筆者：**<a href="/about/">隔壁表哥</a>** </font><br/><br/><font size=3>台灣大學畢業。任職基金業。<font> <br/><font  size=3>利用閒暇時間分享金融知識。<font> <br/><font  size=3>讓投資成為生活的一部分吧！<font></td>
+</tr>
+</tbody></table>
+<p><font size=3><center>有任何問題歡迎朋友們E-mail隔壁表哥。</center></font></p>
+<p><font size=3><center>本站只分享理財知識，不做投資建議。</center></font></p>
+<p><font size=3><center>(閒暇之餘創作，E-mail回復較慢，請見諒）</center></font></p>
+<p><font size=3><center><strong>E-mail: <a href="mailto:&#x67;&#x62;&#98;&#103;&#50;&#48;&#49;&#57;&#64;&#113;&#x71;&#46;&#x63;&#111;&#x6d;">&#x67;&#x62;&#98;&#103;&#50;&#48;&#49;&#57;&#64;&#113;&#x71;&#46;&#x63;&#111;&#x6d;</a></strong></center></font></p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/1-%E7%90%86%E8%B2%A1%E5%85%A5%E9%96%80/">1.理財入門</a>, <a class="article-category-link" href="/categories/1-%E7%90%86%E8%B2%A1%E5%85%A5%E9%96%80/1-4%E9%80%B2%E9%9A%8E%E9%87%91%E8%9E%8D/">1.4進階金融</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%87%E6%81%AF/" rel="tag">升息</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%B6%93%E6%BF%9F%E9%80%B1%E6%9C%9F/" rel="tag">經濟週期</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%99%8D%E6%81%AF/" rel="tag">降息</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/10/19/technical-analysis-index/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          MACD, KDJ, BOLL, MA技術分析指標大全，主流指標一次搞明白
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/10/13/wealth-game-two/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">風靡世界的理財觀念遊戲—富爸爸現金流</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#01-%E4%BB%80%E9%BA%BC%E6%98%AF%E5%8D%87%E6%81%AF%E3%80%81%E9%99%8D%E6%81%AF%EF%BC%9F%E5%A6%82%E4%BD%95%E5%9C%A8%E7%B6%93%E6%BF%9F%E9%AB%94%E4%B8%8A%E9%81%8B%E4%BD%9C%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">01.什麼是升息、降息？如何在經濟體上運作？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#02-%E5%8D%87%E9%99%8D%E5%87%86%E5%A6%82%E4%BD%95%E5%BD%B1%E9%9F%BF%E7%B6%93%E6%BF%9F%E9%AB%94%E9%81%8B%E4%BD%9C%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">02.升降准如何影響經濟體運作？</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2022 Hexo All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+<script src="/js/bootstrap.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>
