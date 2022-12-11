@@ -29,11 +29,13 @@
         if (array.length === 0) return null;
         sectionTitle = CONFIG.TRANSLATION[type];
         switch (type) {
-            case 'POSTS':
+            case 'POSTS':		
             case 'PAGES':
                 $searchItems = array.map(function (item) {
                     // Use config.root instead of permalink to fix url issue
-                    return searchItem('file', item.title, null, item.text.slice(0, 150), CONFIG.ROOT_URL + item.path);
+					//2022/5/15 try to fix url issue
+                    //return searchItem('file', item.title, null, item.text.slice(0, 150), CONFIG.ROOT_URL + item.path);
+					return searchItem('file', item.title, null, item.text.slice(0, 150), item.permalink);
                 });
                 break;
             case 'CATEGORIES':
@@ -101,7 +103,8 @@
                 return filter(keywords, obj, ['title', 'text']);
             },
             PAGE: function (obj) {
-                return filter(keywords, obj, ['title', 'text']);
+                //2022/5/15 delete page in the search
+				//return filter(keywords, obj, ['title', 'text']);
             },
             CATEGORY: function (obj) {
                 return filter(keywords, obj, ['name', 'slug']);
